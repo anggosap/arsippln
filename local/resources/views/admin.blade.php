@@ -10,7 +10,7 @@
 
 <h1>INSERT BUKU</h1>
 {!! Form::open(
-    array('action' => 'InputController@storebuku')
+    array('action' => 'AdminController@storebuku')
     )
 !!}
     {!! csrf_field() !!}
@@ -53,7 +53,7 @@
 
 <h1>INSERT KATEGORI</h1>
 {!! Form::open(
-    array('action' => 'InputController@storekategori')
+    array('action' => 'AdminController@storekategori')
     )
 !!}
     {!! csrf_field() !!}
@@ -70,7 +70,7 @@
 
 <h1>DELETE BUKU</h1>
 {!! Form::open(
-    array('action' => 'InputController@deletebuku')
+    array('action' => 'AdminController@deletebuku')
     )
 !!}
     <select name="kode">
@@ -87,7 +87,7 @@
 
 <h1>DELETE KATEGORI</h1>
 {!! Form::open(
-    array('action' => 'InputController@deletekategori')
+    array('action' => 'AdminController@deletekategori')
     )
 !!}
     <select name="nama_kategori">

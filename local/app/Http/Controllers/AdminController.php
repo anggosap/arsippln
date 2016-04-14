@@ -7,12 +7,12 @@ use App\Arsip;
 use App\Kategori;
 //use Request;
 
-class InputController extends Controller {
+class AdminController extends Controller {
 
 	public function input(){
 		$arsips = Arsip::all();
 		$kategoris = Kategori::all();
-		return view('input', compact('arsips','kategoris'));
+		return view('admin', compact('arsips','kategoris'));
 	}
 
 	public function storebuku(Request $request){
