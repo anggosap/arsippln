@@ -1,9 +1,13 @@
 <?php
-Route::get('/index', 'SearchController@index');
-Route::post('/index', 'SearchController@search');
+Route::get('/', 'SearchController@index');
+Route::post('/', 'SearchController@search');
 Route::get('/arsip', 'SearchController@arsip');
-Route::get('/admin', 'AdminController@input');
-Route::post('/storebuku', 'AdminController@storebuku');
-Route::post('/storekategori', 'AdminController@storekategori');
-Route::post('/deletebuku', 'AdminController@deletebuku');
-Route::post('/deletekategori', 'AdminController@deletekategori');
+
+Route::get('/admin', 'AdminCreateController@index');
+Route::post('/createbuku', 'AdminCreateController@createbuku');
+Route::post('/createkategori', 'AdminCreateController@createkategori');
+Route::get('/modify', 'AdminModifyController@index');
+Route::get('/show/{kode}', 'AdminModifyController@show');
+Route::post('/update', 'AdminModifyController@update');
+Route::get('/delete/{kode}', 'AdminModifyController@delete');
+Route::get('/deletekategori/{id}', 'AdminModifyController@deletekategori');

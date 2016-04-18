@@ -1,3 +1,6 @@
+<a href="{{ action('AdminCreateController@index') }}">Create Arsip</a>
+<a href="{{ action('AdminModifyController@index') }}">Modify Arsip</a>
+
 @if($errors->any())
     <div class="alert alert-danger">
         @foreach($errors->all() as $error)
@@ -10,7 +13,7 @@
 
 <h1>INSERT BUKU</h1>
 {!! Form::open(
-    array('action' => 'AdminController@storebuku')
+    array('action' => 'AdminCreateController@createbuku')
     )
 !!}
     {!! csrf_field() !!}
@@ -53,7 +56,7 @@
 
 <h1>INSERT KATEGORI</h1>
 {!! Form::open(
-    array('action' => 'AdminController@storekategori')
+    array('action' => 'AdminCreateController@createkategori')
     )
 !!}
     {!! csrf_field() !!}
@@ -67,35 +70,3 @@
 {!! Form::close() !!}
 
 <!-- ------------------------------------------------------------------------------------ -->
-
-<h1>DELETE BUKU</h1>
-{!! Form::open(
-    array('action' => 'AdminController@deletebuku')
-    )
-!!}
-    <select name="kode">
-        @if (count($arsips))
-            @foreach($arsips as $arsip)
-            <option value='{{ $arsip->kode }}'>{{ $arsip->judul }}</option>
-            @endforeach
-        @endif
-    </select>
-    <button type="submit">Delete</button>
-{!! Form::close() !!}
-
-<!-- ------------------------------------------------------------------------------------ -->
-
-<h1>DELETE KATEGORI</h1>
-{!! Form::open(
-    array('action' => 'AdminController@deletekategori')
-    )
-!!}
-    <select name="nama_kategori">
-        @if (count($kategoris))
-            @foreach($kategoris as $kategori)
-            <option value="{{ $kategori->nama_kategori }}">{{ $kategori->nama_kategori }}</option>
-            @endforeach
-        @endif
-    </select>
-    <button type="submit">Delete</button>
-{!! Form::close() !!}
